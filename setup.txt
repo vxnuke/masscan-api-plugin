@@ -1,0 +1,7 @@
+Instructions.
+
+CREATE DATABASE masscan_api;
+CREATE USER 'demo'@'localhost' IDENTIFIED BY 'demo';
+GRANT ALL PRIVILEGES ON masscan_api.* TO 'demo'@'localhost';
+
+mysql -p masscan_api < masscan.sql
