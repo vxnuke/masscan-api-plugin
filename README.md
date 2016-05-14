@@ -16,3 +16,19 @@ chown www-data /var/www/html/api
 Step 3:
 
 Adjust client "config.cfg" file to suite your configuration.
+
+
+TODO
+
+Bugs:
+
+Api in the host and port parameters in request.php
+
+Temp Fix: Setup ip filtering to api directory using .htaccess
+
+Make sure that your web directory is not writeable set permission 550
+on your www-data folder so avoid server compromise through sql injection flaw.
+
+I am currently looking for a developer to fix sql injection and apply proper sanitation and contributions would be much appreciated.
+
+
