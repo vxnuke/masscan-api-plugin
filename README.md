@@ -22,7 +22,7 @@ TODO
 
 Bugs:
 
-Api in the host and port parameters in request.php
+Api in the host and port parameters in request.php are vulnerable to sql injection.
 
 Temp Fix: Setup ip filtering to api directory using .htaccess
 
