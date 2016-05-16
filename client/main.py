@@ -48,11 +48,13 @@ while True:
 	print "Sleeping 3 seconds..."
 	time.sleep(3)
 	print "Marking shard as complete.\nConnecting..."
-	conn.request("GET", proto+"://"+server+"/api/request.php?complete=yes&host="+host+"&port="+port+"&shard="+shard)
-	r2 = conn.getresponse()
+	conn2 = httplib.HTTPSConnection(server)
+	conn2.request("GET", proto+"://"+server+"/api/request.php?complete=yes&host="+host+"&port="+port+"&shard="+shard)
+	r2 = conn2.getresponse()
 	print r2.status, r2.reason
 	data2 = r2.read()
 	print "Completed range: "+host+" Port: "+port+" Shard: "+shard
+	conn2.close()
 	conn.close()
 	print "Sleeping 5 seconds..."
 	time.sleep(5)
