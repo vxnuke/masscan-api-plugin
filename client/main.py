@@ -18,7 +18,7 @@ while True:
 	if (os.path.exists("./stop")):
 		exit("Detected exit file")
 	print "Connecting..."
-	conn = httplib.HTTPSConnection(server)
+	conn = httplib.HTTPConnection(server)
 	conn.request("GET", "/api/request.php?get=host")
 	r1 = conn.getresponse()
 	if (str(r1.status)+" "+str(r1.reason) == '404 Not Found'):
@@ -48,7 +48,7 @@ while True:
 	print "Sleeping 3 seconds..."
 	time.sleep(3)
 	print "Marking shard as complete.\nConnecting..."
-	conn2 = httplib.HTTPSConnection(server)
+	conn2 = httplib.HTTPConnection(server)
 	conn2.request("GET", proto+"://"+server+"/api/request.php?complete=yes&host="+host+"&port="+port+"&shard="+shard)
 	r2 = conn2.getresponse()
 	print r2.status, r2.reason
