@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "demo";
-$password = "demo";
+$username = "input_user";
+$password = "input_pass";
 $dbname = "masscan_api";
 
 // Create connection
